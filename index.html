@@ -1,228 +1,227 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ER Segurança Eletrônica - Especialistas em Motores de Portão, Iluminação LED e CFTV em Brasília.">
-  <title>ER Segurança Eletrônica | Proteção e Iluminação Profissional</title>
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --primary-blue: #00AEEF;
-      --primary-orange: #FF8C00;
-      --dark-bg: #0b0f14;
-      --card-bg: #161b22;
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ER Segurança Eletrônica - Motores de Portão, Iluminação LED e CFTV em Brasília.">
+    <title>ER Segurança Eletrônica | Soluções Completas</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #00AEEF;
+            --primary-orange: #FF8C00;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
 
-    body { 
-      font-family: 'Inter', sans-serif; 
-      background-color: var(--dark-bg); 
-      color: #f0f6fc; 
-      overflow-x: hidden;
-    }
+        [data-theme="dark"] {
+            --bg-color: #0b0f14;
+            --card-bg: #161b22;
+            --text-main: #f0f6fc;
+            --text-secondary: #8b949e;
+            --border-color: #30363d;
+        }
 
-    h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        [data-theme="light"] {
+            --bg-color: #ffffff;
+            --card-bg: #f6f8fa;
+            --text-main: #1f2328;
+            --text-secondary: #57606a;
+            --border-color: #d0d7de;
+        }
 
-    /* Floating WhatsApp for conversion */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: #fff;
-      border-radius: 50px;
-      padding: 10px 20px;
-      z-index: 1000;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      transition: var(--transition);
-    }
-    .whatsapp-float:hover { transform: scale(1.1); color: white; }
+        body { 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
 
-    /* Navbar Glassmorphism */
-    .navbar { 
-      background: rgba(11, 15, 20, 0.85); 
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0, 174, 239, 0.2); 
-    }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
 
-    /* Hero Section with Glass Card */
-    .hero { 
-      padding: 160px 0 100px; 
-      background: radial-gradient(circle at top right, rgba(0, 174, 239, 0.15), transparent),
-                  radial-gradient(circle at bottom left, rgba(255, 140, 0, 0.1), transparent);
-    }
+        .navbar { 
+            background: var(--card-bg); 
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
 
-    /* Service Card UX */
-    .service-card { 
-      background: var(--card-bg); 
-      border: 1px solid #30363d; 
-      border-radius: 12px;
-      padding: 2rem;
-      transition: var(--transition);
-      height: 100%;
-    }
-    .service-card:hover { 
-      border-color: var(--primary-blue); 
-      transform: translateY(-10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
+        .theme-toggle {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    /* Motor Highlight Section - REQUESTED FEATURE */
-    .highlight-section {
-      background: linear-gradient(135deg, #161b22 0%, #0b0f14 100%);
-      border-left: 5px solid var(--primary-orange);
-    }
+        /* Hero Compact */
+        .hero-section { padding: 140px 0 60px; background: radial-gradient(circle at top right, rgba(0, 174, 239, 0.05), transparent); }
 
-    .portfolio-img { 
-      border-radius: 12px; 
-      overflow: hidden; 
-      height: 300px; 
-      position: relative;
-    }
-    .portfolio-img img, .portfolio-img video {
-      width: 100%; height: 100%; object-fit: cover;
-    }
+        /* Cards */
+        .custom-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            height: 100%;
+            transition: var(--transition);
+        }
+        .custom-card:hover { transform: translateY(-8px); border-color: var(--primary-blue); }
 
-    .btn-cta {
-      background: linear-gradient(90deg, var(--primary-orange), #ff5e00);
-      border: none;
-      padding: 15px 30px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+        .img-wrapper {
+            background: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .img-wrapper img { max-height: 100%; object-fit: contain; }
 
-    .icon-circle {
-      width: 70px;
-      height: 70px;
-      background: rgba(0, 174, 239, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.5rem;
-      color: var(--primary-blue);
-      font-size: 2rem;
-    }
-  </style>
+        .icon-circle {
+            width: 60px; height: 60px;
+            background: rgba(0, 174, 239, 0.1);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+        }
+
+        .btn-whatsapp {
+            background: #25d366; color: white;
+            font-weight: 700; border: none; padding: 12px;
+            border-radius: 8px; text-decoration: none; display: block; text-align: center;
+        }
+
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25d366; width: 60px; height: 60px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 30px; color: white; box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 1000;
+        }
+    </style>
 </head>
 <body>
 
-  <a href="https://wa.me/+556191515880" class="whatsapp-float">
-    <i class="bi bi-whatsapp me-2"></i> Orçamento Rápido
-  </a>
+    <a href="https://wa.me/+5561991279948" class="whatsapp-float"><i class="bi bi-whatsapp"></i></a>
 
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="assets/er-logo.png" alt="Logo" width="40" height="40" class="me-2 rounded-circle">
-        <span class="fw-bold">ER <span style="color: var(--primary-orange)">SEGURANÇA</span></span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item"><a class="nav-link px-3" href="#servicos">Serviços</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="#motores">Motores</a></li>
-          <li class="nav-item"><a class="nav-link px-3" href="#portfolio">Portfólio</a></li>
-          <li class="nav-item"><a class="btn btn-outline-info ms-lg-3 px-4" href="tel:+556191515880">Ligar Agora</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <header class="hero">
-    <div class="container text-center text-lg-start">
-      <div class="row align-items-center">
-        <div class="col-lg-6" data-aos="fade-right">
-          <span class="badge bg-primary mb-3">Soluções Completas em Brasília</span>
-          <h1 class="display-3 fw-bold mb-4">Sua tranquilidade é a nossa <span style="color: var(--primary-blue)">missão.</span></h1>
-          <p class="lead mb-5 text-secondary">Especialistas em instalação de sistemas de segurança, motores de portão ultra-rápidos e iluminação LED de alto padrão.</p>
-          <div class="d-flex flex-column flex-md-row gap-3">
-            <a href="https://wa.me/+556191515880" class="btn btn-cta btn-lg text-white">Solicitar Visita Técnica</a>
-            <a href="#portfolio" class="btn btn-outline-light btn-lg">Conheça nosso trabalho</a>
-          </div>
-        </div>
-        <div class="col-lg-6 mt-5 mt-lg-0">
-          <img src="assets/er-image.jpeg" alt="Instalação Profissional" class="img-fluid rounded-4 shadow-lg border border-secondary">
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <section id="motores" class="py-5 highlight-section">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-5 mb-4 mb-lg-0">
-          <h2 class="display-5 fw-bold mb-3">Motores de Portão <span class="text-warning">Premium</span></h2>
-          <p class="text-secondary">Instalação e manutenção de motores eletrônicos com as melhores marcas do mercado (Garen, Rossi, PPA).</p>
-          <ul class="list-unstyled mb-4">
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i> Abertura em até 4 segundos</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i> Configuração de controles e travas</li>
-            <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i> Manutenção preventiva e corretiva</li>
-          </ul>
-          <a href="https://wa.me/+556191515880" class="btn btn-warning fw-bold">Ver Modelos Disponíveis</a>
-        </div>
-        <div class="col-lg-7">
-          <div class="row g-2">
-            <div class="col-12">
-               <video src="assets/video-instalacao-portao-eletrico.mp4" muted autoplay loop playsinline class="w-100 rounded shadow-lg"></video>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="assets/er-logo.png" alt="ER" width="35" class="me-2 rounded-circle">
+                <span class="fw-bold">ER <span style="color: var(--primary-orange)">SEGURANÇA</span></span>
+            </a>
+            <div class="d-flex align-items-center gap-3">
+                <ul class="navbar-nav d-none d-lg-flex flex-row gap-3 me-3">
+                    <li><a href="#produtos" class="nav-link">Motores</a></li>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                </ul>
+                <button id="themeSwitcher" class="theme-toggle"><i class="bi bi-moon-stars-fill" id="themeIcon"></i></button>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <section id="servicos" class="py-5">
-    <div class="container text-center">
-      <h2 class="mb-5 fw-bold">Por que escolher a ER Segurança?</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="service-card">
-            <div class="icon-circle"><i class="bi bi-shield-lock"></i></div>
-            <h3>Segurança 24h</h3>
-            <p class="text-secondary">Instalação de câmeras IP e alarmes monitorados via smartphone para total controle.</p>
-          </div>
+    <header class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Sua Segurança, <span style="color: var(--primary-blue)">Nossa Missão.</span></h1>
+            <p class="lead text-secondary mb-0">Confira nossos motores em destaque e soluções completas.</p>
         </div>
-        <div class="col-md-4">
-          <div class="service-card">
-            <div class="icon-circle"><i class="bi bi-lightbulb"></i></div>
-            <h3>Iluminação LED</h3>
-            <p class="text-secondary">Projetos de iluminação cênica e funcional com perfis de LED de última geração.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="service-card">
-            <div class="icon-circle"><i class="bi bi-lightning-charge"></i></div>
-            <h3>Infra Elétrica</h3>
-            <p class="text-secondary">Tudo para sua obra, do padrão de energia à fiação interna completa e segura.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <footer class="py-5 bg-black">
-    <div class="container text-center">
-      <img src="assets/er-logo.png" alt="ER" width="60" class="mb-4">
-      <p class="text-secondary">&copy; 2026 ER Segurança Eletrônica - DF e Entorno.</p>
-      <div class="social-links mt-3">
-        <a href="#" class="text-white mx-2 fs-4"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="text-white mx-2 fs-4"><i class="bi bi-facebook"></i></a>
-      </div>
-    </div>
-  </footer>
+    <section id="produtos" class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="custom-card">
+                        <div class="img-wrapper"><img src="assets/jetflex.jpeg" alt="PPA JetFlex"></div>
+                        <h4>PPA JetFlex</h4>
+                        <p class="text-secondary small">Abertura em 4s. O máximo em velocidade e segurança residencial.</p>
+                        <a href="https://wa.me/+5561991279948" class="btn-whatsapp">Solicitar Agora</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card">
+                        <div class="img-wrapper"><img src="assets/rossi.jpeg" alt="Rossi VIP"></div>
+                        <h4>Rossi VIP</h4>
+                        <p class="text-secondary small">Potência e durabilidade para portões de alto fluxo.</p>
+                        <a href="https://wa.me/+5561991279948" class="btn-whatsapp">Solicitar Agora</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card">
+                        <div class="img-wrapper"><img src="assets/dzatto.jpeg" alt="DZ Atto"></div>
+                        <h4>DZ Atto</h4>
+                        <p class="text-secondary small">Qualidade Rossi com o melhor custo-benefício do mercado.</p>
+                        <a href="https://wa.me/+5561991279948" class="btn-whatsapp">Solicitar Agora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <section id="servicos" class="py-5" style="background: rgba(0,0,0,0.02)">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Nossas Soluções Especializadas</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="custom-card">
+                        <div class="icon-circle"><i class="bi bi-shield-lock"></i></div>
+                        <h3>Segurança 24h</h3>
+                        <p class="text-secondary">Instalação de câmeras IP e alarmes monitorados diretamente pelo seu smartphone.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card">
+                        <div class="icon-circle"><i class="bi bi-lightbulb"></i></div>
+                        <h3>Iluminação LED</h3>
+                        <p class="text-secondary">Projetos de iluminação funcional e cênica com perfis de LED de alto padrão.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card">
+                        <div class="icon-circle"><i class="bi bi-lightning-charge"></i></div>
+                        <h3>Infra Elétrica</h3>
+                        <p class="text-secondary">Do padrão de energia à fiação interna completa, garantindo segurança total na sua obra.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 border-top border-dark text-center">
+        <p class="text-secondary small">&copy; 2026 ER Segurança Eletrônica - DF e Entorno.</p>
+    </nav>
+
+    <script>
+        const switcher = document.getElementById('themeSwitcher');
+        const icon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', savedTheme);
+        updateIcon(savedTheme);
+
+        switcher.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            icon.className = theme === 'dark' ? 'bi bi-moon-stars-fill' : 'bi bi-sun-fill';
+        }
+    </script>
 </body>
 </html>
